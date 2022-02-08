@@ -1,0 +1,20 @@
+apiVersion: appmesh.k8s.aws/v1beta2
+kind: VirtualNode
+metadata:
+  name: sma-node-v1
+  namespace: smart-apps
+spec:
+  podSelector:
+    matchLabels:
+      app: sma-app-v1
+  listeners:
+    - portMapping:
+        port: 80
+        protocol: http
+  serviceDiscovery:
+    dns:
+      hostname: sma-svc-v1.smart-apps.svc.cluster.local
+  logging:
+    accessLog:
+      file:
+        path: "/dev/stdout"
