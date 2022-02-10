@@ -17,7 +17,7 @@ spec:
           weightedTargets:
             - virtualNodeRef:
                 name: sma-node-v1
-              weight: 0
+              weight: 100
             - virtualNodeRef:
                 name: sma-node-v2
-              weight: 100
+              weight: 0
